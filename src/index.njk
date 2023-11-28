@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: Home Page
+---
+
+<h1>Welcome to My Eleventy Site with a dot .njk homepage</h1>
+
+<div id="containerTop">
+  <div class="display-6 text-muted text-center mainTitle">Faruq's Tech Stack</div>
+  <div id="mainImage"><img src="images/header_01.png" alt="My Image" /></div>
+  <div class="theAccord">{% include "layouts/mainAccordian.njk" %}</div>
+</div>
+
+<script>
+  function customSmoothScroll(selector) {
+    const element = document.querySelector(selector);
+    if (element) {
+      const offset = element.getBoundingClientRect().top;
+      const initialPosition = window.scrollY;
+      const targetPosition = offset + initialPosition;
+      const duration = 1000; // Adjust this value to control the scroll speed (in milliseconds)
+      const startTime = performance.now();
+
+      function scrollStep(timestamp) {
+        const currentTime = timestamp - startTime;
+        const progress = Math.min(currentTime / duration, 1);
+        window.scrollTo(0, initialPosition + progress * offset);
+
+        if (currentTime < duration) {
+          requestAnimationFrame(scrollStep);
+        }
+      }
+
+      requestAnimationFrame(scrollStep);
+    }
+  }
+</script>
