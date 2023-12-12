@@ -1,0 +1,72 @@
+    <style>
+        .accordion-button {
+            background-color: #dfdfdf;
+            border-bottom: none; 
+            padding-right: 100px;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #dfdfdf;
+                        border-top: none; /* Removes the top border */
+
+        }
+        .accordion-body {
+            background-color: #dfdfdf;
+        }
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+    
+    </style>
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+        {# <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">Accordion Item #1</button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body" onClick="customSmoothScroll('#brick3')">hellow Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+            </div>
+        </div> #}
+        {% include "layouts/accord/accordItem_01.njk" %}
+        {% include "layouts/accord/accordItem_02.njk" %}
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">Accordion Item #3</button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+function customSmoothScroll(selector) {
+  const element = document.querySelector(selector);
+  if (element) {
+    // Adjust this CSS variable in your stylesheet based on the height of any fixed elements
+    const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--scroll-offset')) || 0;
+
+    // Calculate the top position of the element relative to the document, minus the offset
+    const targetPosition = element.getBoundingClientRect().top + window.scrollY - offset;
+    const initialPosition = window.scrollY;  
+    const duration = 500;
+    const startTime = performance.now();    
+
+    function scrollStep(timestamp) {
+      const currentTime = timestamp - startTime;
+      const progress = Math.min(currentTime / duration, 1);
+
+      window.scrollTo(0, initialPosition + (targetPosition - initialPosition) * progress);
+      
+      if (currentTime < duration) {
+        requestAnimationFrame(scrollStep);
+      }
+    }
+
+    requestAnimationFrame(scrollStep);
+  }
+}
+
+      </script>

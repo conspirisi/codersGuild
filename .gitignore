@@ -6,3 +6,4 @@ node_modules/
 
 # Ignore output folder _site
 _site/*
+

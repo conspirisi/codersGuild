@@ -3,35 +3,29 @@ layout: layouts/base.njk
 title: Home Page
 ---
 
-<h1>Welcome to My Eleventy Site with a dot .njk homepage</h1>
-
 <div id="containerTop">
-  <div class="display-6 text-muted text-center mainTitle">Faruq's Tech Stack</div>
-  <div id="mainImage"><img src="images/header_01.png" alt="My Image" /></div>
-  <div class="theAccord">{% include "layouts/mainAccordian.njk" %}</div>
+  <div class="mainTitle d-flex align-items-center justify-content-center">
+    <h1 class="display-6 text-muted">Faruq's Tech Stack</h1>
+  </div>
+
+  <div id="mainImage"><img src="images/header_03.png" alt="My Image" /></div>
+  <div class="theAccord">{% include "layouts/accord/mainAccordian.njk" %}</div>
 </div>
+<div id="brick1">
+  <div class="inDepthImage">
+    <img src="images/html5_2.png" alt="My Image" />
+  </div>
+  <div class="inDepthText">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget felis eget nunc lobortis mattis aliquam
+    faucibus purus in. Nec feugiat nisl pretium fusce id velit ut. Vitae et leo duis ut diam. Faucibus nisl tincidunt eget nullam non nisi est. Quis risus sed vulputate odio ut
+    enim blandit. Vitae et leo duis ut. Fermentum leo vel orci porta.
+    <p></p>
+    Neque vitae tempus quam pellentesque nec nam. Volutpat odio facilisis mauris sit amet massa vitae tortor condimentum. Tristique nulla aliquet enim tortor at auctor urna. Urna
+    molestie at elementum eu facilisis sed. Dictum varius duis at consectetur lorem donec massa sapien faucibus. Eu facilisis sed odio morbi quis commodo odio aenean.
+  </div>
+</div>
+<div id="brick2">2</div>
+<div id="brick3">3</div>
+<div id="brick4">4</div>
 
-<script>
-  function customSmoothScroll(selector) {
-    const element = document.querySelector(selector);
-    if (element) {
-      const offset = element.getBoundingClientRect().top;
-      const initialPosition = window.scrollY;
-      const targetPosition = offset + initialPosition;
-      const duration = 1000; // Adjust this value to control the scroll speed (in milliseconds)
-      const startTime = performance.now();
-
-      function scrollStep(timestamp) {
-        const currentTime = timestamp - startTime;
-        const progress = Math.min(currentTime / duration, 1);
-        window.scrollTo(0, initialPosition + progress * offset);
-
-        if (currentTime < duration) {
-          requestAnimationFrame(scrollStep);
-        }
-      }
-
-      requestAnimationFrame(scrollStep);
-    }
-  }
-</script>
+<script></script>

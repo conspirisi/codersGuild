@@ -1,0 +1,32 @@
+:root {
+  --scroll-offset: 0px; /* Adjust this value based on the height of your fixed header */
+}
+
+#brick1,
+#brick2,
+#brick3,
+#brick4 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 135px);
+  min-height: 675px;
+  width: 1200px;
+  /* border: 2px solid red; */
+  margin-bottom: 500px;
+}
+
+.inDepthImage {
+  grid-area: 1/1/4/4;
+}
+
+.inDepthImage img {
+  /* display: block; */
+  width: 100%;
+  height: auto;
+}
+
+.inDepthText {
+  grid-area: 1/4/6/8;
+  /* border: 2px solid lightseagreen; */
+  margin-top: 4rem;
+}
