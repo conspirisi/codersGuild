@@ -1,0 +1,42 @@
+body {
+  background-color: #dfdfdf;
+}
+
+#myContainer {
+  width: 1200px;
+  /* border: 6px solid orange; */
+  margin: 0 auto;
+}
+
+#containerTop {
+  display: grid;
+  min-height: 675px;
+  width: 1200px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 135px);
+  /* border: 2px solid purple; */
+}
+
+.mainTitle {
+  grid-area: 1/4/2/7;
+  /* border: 2px solid pink; */
+}
+
+#mainImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#mainImage {
+  grid-area: 2/1/5/4;
+  /* border: 2px solid red; */
+}
+
+.theAccord {
+  grid-area: 2/4/5/8;
+  /* border: 2px solid orange; */
+}
+
+.myLinkCol {
+  color: #0d6efd;
+}

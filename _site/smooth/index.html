@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Add some styling to the anchor target for visibility */
+        #target {
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <a href="#target" onclick="smoothScroll('#target')">Click here to scroll smoothly to the target</a>
+    </p>
+
+    <p>
+
+        
+    </p>
+    <!-- Add some content above the target -->
+    <div style="height: 800px;"></div>
+    <div id="target">
+        <!-- This is the target anchor -->
+        <h2>Target Anchor</h2>
+        <p>This is the anchor you want to scroll to.</p>
+    </div>
+
+    <script>
+        function smoothScroll(target) {
+            const element = document.querySelector(target);
+            element.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
