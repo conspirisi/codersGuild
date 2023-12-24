@@ -31,10 +31,10 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,8 +52,10 @@
 </nav>
 </div></div>
     
- 
-    <h2>HTML Code Snippet</h2>
+
+
+ <h2 class="text-primary mt-5">Calculator - HTML code</h2>
+
     <pre><code class="language-html">
  &lt;h1&gt;Calculator&lt;/h1&gt;
 
@@ -72,12 +74,120 @@
     </code></pre>
 
   
-    <h2>JavaScript Code Snippet</h2>
+   <h2 class="text-primary mt-2">Calculator - JS code</h2>
     <pre><code class="language-javascript">
-// Sample JavaScript Code
-console.log('Hello, World!');
+function calculator(operator) {
+  const number1 = parseFloat(document.getElementById("number1").value);
+  const number2 = parseFloat(document.getElementById("number2").value);
+
+  let value;
+
+  switch (operator) {
+    case "add":
+      value = number1 + number2;
+      break;
+    case "subtract":
+      value = number1 - number2;
+      break;
+    case "multiply":
+      value = number1 * number2;
+      break;
+    case "divide":
+      value = number2 !== 0 ? number1 / number2 : "Cannot divide by zero";
+      break;
+    case "modulus":
+      value = number1 % number2;
+      break;
+    default:
+      value = "Invalid operator";
+  }
+
+  console.log(`${number1} ${operator} ${number2} = ${value}`);
+
+  document.getElementById("result").textContent = `Result: ${value}`;
+}
+
+function resetFields() {
+  document.getElementById("number1").value = "";
+  document.getElementById("number2").value = "";
+  document.getElementById("result").textContent = "";
+}
     </code></pre>
 
+
+
+<h2 class="text-primary mt-5">Switch - HTML code</h2>
+
+    <pre><code class="language-html">
+     &lt;div&gt;
+        &lt;button id="cola"&gt;Cola&lt;/button&gt;
+        &lt;button id="lemon"&gt;Lemonade&lt;/button&gt;
+        &lt;button id="orange"&gt;Orangeade&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;p&gt;&lt;/p&gt;
+    &lt;div&gt;
+        &lt;button id="small"&gt;Small&lt;/button&gt;
+        &lt;button id="medium"&gt;Medium&lt;/button&gt;
+        &lt;button id="large"&gt;Large&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;div&gt;
+        &lt;button id="order"  style="background-color:MediumAquamarine;"&gt;Order my drink!&lt;/button&gt;
+      &lt;button id="reset" style="background-color:pink;"&gt;Reset&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p id="orderOutput"&gt;&lt;/p&gt;
+
+    </code></pre>
+
+  
+   <h2 class="text-primary mt-2">Switch - JS code</h2>
+    <pre><code class="language-javascript">
+function calculator(operator) {
+  const number1 = parseFloat(document.getElementById("number1").value);
+  const number2 = parseFloat(document.getElementById("number2").value);
+
+  let value;
+
+  switch (operator) {
+    case "add":
+      value = number1 + number2;
+      break;
+    case "subtract":
+      value = number1 - number2;
+      break;
+    case "multiply":
+      value = number1 * number2;
+      break;
+    case "divide":
+      value = number2 !== 0 ? number1 / number2 : "Cannot divide by zero";
+      break;
+    case "modulus":
+      value = number1 % number2;
+      break;
+    default:
+      value = "Invalid operator";
+  }
+
+  console.log(`${number1} ${operator} ${number2} = ${value}`);
+
+  document.getElementById("result").textContent = `Result: ${value}`;
+}
+
+function resetFields() {
+  document.getElementById("number1").value = "";
+  document.getElementById("number2").value = "";
+  document.getElementById("result").textContent = "";
+}
+    </code></pre>
+
+    <h2 class="text-primary mt-2">Percentage - JS code</h2>
+    <pre><code class="language-javascript">
+//function to calculate percentage takes 2 arguments, desired percentage and a number to work out a percentage on.
+percentageCalc=(percentage,numToProcess)=>{
+  return console.log((percentage/100)*numToProcess) // returns the percentage
+}
+percentageCalc(20,1000)
+    </code></pre>
  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 
