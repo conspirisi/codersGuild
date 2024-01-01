@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/bricks.css">
+
+  <style>
+
+
+</style>
+</head>
+<body>
+  <div id="myContainer">
+  <div>
+
+<div class="navContainer">
+ 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Coders Guild
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/codersGuild_01_introJS">Intro to JS Practicals - Tasks</a></li>
+            <li><a class="dropdown-item" href="/codersGuild_02_Loops_01">Loops, Arrays and Objects - Lesson 1 Tasks</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div></div>
+    
+
+<h2 class="text-primary mt-5">Loops, Arrays and Objects - Lesson 1 Tasks</h2>
+
+<h3 class="text-primary mt-5">7 times table  - Task 1</h3>
+    <pre><code class="language-javascript">
+for (let i = 1; i <= 12; i++) {
+  let result = 7 * i;
+  console.log(`7 x ${i} = ${result}`);
+}
+    </code></pre>
+
+
+
+<h3 class="text-primary mt-5">Task 2 - Favorite Foods HTML</h3>
+
+    <pre><code class="language-html">
+      &lt;p id="FavFood_01"&gt;Favorite Food&lt;/p&gt;
+  &lt;p id="FavFood_02"&gt;Favorite Food&lt;/p&gt;
+  &lt;p id="FavFood_03"&gt;Favorite Food&lt;/p&gt;
+
+    </code></pre>
+
+  
+   <h3 class="text-primary mt-5">Task 2 - Favorite Foods HTML JS Code</h3 >
+    <pre><code class="language-javascript">
+let favFoods=["Pasta","Pizza", "Biryani","Sheesh Kebab","Chicken Tikka"]
+
+var favFoodsElem_01 = document.getElementById("FavFood_01");
+favFoodsElem_01.textContent=favFoods[0]
+
+var favFoodsElem_02 = document.getElementById("FavFood_02");
+favFoodsElem_02.textContent=favFoods[1]
+
+var favFoodsElem_03 = document.getElementById("FavFood_03");
+favFoodsElem_03.textContent=favFoods[2]
+    </code></pre>
+ 
+
+
+<h3 class="text-primary mt-5">Task 3 - Print all favourite foods</h3>
+
+    <pre><code class="language-html">
+&lt;textarea id="foodList" rows="5" cols="30"&gt;&lt;/textarea&gt;
+
+    </code></pre>
+
+  
+   <h3 class="text-primary mt-5">Task 3 - Print all favourite foods JS code</h3 >
+    <pre><code class="language-javascript">
+let favFoods = ["Pasta", "Pizza", "Biryani", "Sheesh Kebab", "Chicken Tikka"];
+        let foodListElem = document.getElementById("foodList");
+
+        // Create a string with array items separated by line breaks
+        let foodListText = favFoods.join("\n");
+
+        // Set the text content of the textarea
+        foodListElem.textContent = foodListText;
+    </code></pre>
+
+<h3 class="text-primary mt-5">Task 4</h3>
+
+    <pre><code class="language-html">
+      &lt;p id="FavFood_01"&gt;Favorite Food&lt;/p&gt;
+  &lt;p id="FavFood_02"&gt;Favorite Food&lt;/p&gt;
+  &lt;p id="FavFood_03"&gt;Favorite Food&lt;/p&gt;
+
+    </code></pre>
+
+  
+   <h3 class="text-primary mt-5">Task 4 & Task 5 - favourite recipe object</h3 >
+
+
+
+  <pre><code class="language-html">
+&lt;h1&gt;Hot Chocolate Recipe&lt;/h1&gt;
+    &lt;div id="recipe"&gt;&lt;/div&gt;
+    &lt;button id="cookButton"&gt;Let's Cook!&lt;/button&gt;
+
+  </code></pre>
+
+    <pre><code class="language-javascript">
+// Create an object to hold information about Hot Chocolate
+        const hotChocolateRecipe = {
+            name: "Hot Chocolate",
+            ingredients: [
+                "2 cups milk",
+                "2 tablespoons cocoa powder",
+                "2 tablespoons sugar",
+                "1/4 cup water",
+                "1/4 teaspoon vanilla extract",
+                "Whipped cream (optional)",
+                "Chocolate shavings (optional)"
+            ],
+            directions: [
+                "In a saucepan, mix cocoa powder and sugar with water over medium heat.",
+                "Stir until it becomes a smooth paste.",
+                "Add milk and continue to stir until hot, but do not boil.",
+                "Remove from heat and stir in vanilla extract.",
+                "Pour into mugs and top with whipped cream and chocolate shavings if desired."
+            ]
+        };
+
+        // Function to display the recipe
+        function displayRecipe() {
+            // Display the ingredients
+            let recipeHTML = "<h2>Ingredients:</h2><ul>";
+            for (let i = 0; i < hotChocolateRecipe.ingredients.length; i++) {
+                recipeHTML += `<li>${hotChocolateRecipe.ingredients[i]}</li>`;
+            }
+            recipeHTML += "</ul>";
+
+            // Display the directions
+            recipeHTML += "<h2>Directions:</h2><ol>";
+            for (let i = 0; i < hotChocolateRecipe.directions.length; i++) {
+                recipeHTML += `<li>${hotChocolateRecipe.directions[i]}</li>`;
+            }
+            recipeHTML += "</ol>";
+
+            // Display the recipe on the screen
+            document.getElementById("recipe").innerHTML = recipeHTML;
+        }
+
+        // Event listener for the "Let's Cook!" button
+        document.getElementById("cookButton").addEventListener("click", displayRecipe);
+    </code></pre>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+
+   
+
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+</body> 
+
+
+</html>

@@ -1,0 +1,135 @@
+---
+layout: layouts/base.njk
+title: Home Page
+---
+
+
+<h2 class="text-primary mt-5">Loops, Arrays and Objects - Lesson 1 Tasks</h2>
+
+<h3 class="text-primary mt-5">7 times table  - Task 1</h3>
+    <pre><code class="language-javascript">
+for (let i = 1; i <= 12; i++) {
+  let result = 7 * i;
+  console.log(`7 x ${i} = ${result}`);
+}
+    </code></pre>
+
+
+
+<h3 class="text-primary mt-5">Task 2 - Favorite Foods HTML</h3>
+
+    <pre><code class="language-html">
+      &lt;p id="FavFood_01"&gt;Favorite Food&lt;/p&gt;
+  &lt;p id="FavFood_02"&gt;Favorite Food&lt;/p&gt;
+  &lt;p id="FavFood_03"&gt;Favorite Food&lt;/p&gt;
+
+    </code></pre>
+
+  
+   <h3 class="text-primary mt-5">Task 2 - Favorite Foods HTML JS Code</h3 >
+    <pre><code class="language-javascript">
+let favFoods=["Pasta","Pizza", "Biryani","Sheesh Kebab","Chicken Tikka"]
+
+var favFoodsElem_01 = document.getElementById("FavFood_01");
+favFoodsElem_01.textContent=favFoods[0]
+
+var favFoodsElem_02 = document.getElementById("FavFood_02");
+favFoodsElem_02.textContent=favFoods[1]
+
+var favFoodsElem_03 = document.getElementById("FavFood_03");
+favFoodsElem_03.textContent=favFoods[2]
+    </code></pre>
+ 
+
+
+<h3 class="text-primary mt-5">Task 3 - Print all favourite foods</h3>
+
+    <pre><code class="language-html">
+&lt;textarea id="foodList" rows="5" cols="30"&gt;&lt;/textarea&gt;
+
+    </code></pre>
+
+  
+   <h3 class="text-primary mt-5">Task 3 - Print all favourite foods JS code</h3 >
+    <pre><code class="language-javascript">
+let favFoods = ["Pasta", "Pizza", "Biryani", "Sheesh Kebab", "Chicken Tikka"];
+        let foodListElem = document.getElementById("foodList");
+
+        // Create a string with array items separated by line breaks
+        let foodListText = favFoods.join("\n");
+
+        // Set the text content of the textarea
+        foodListElem.textContent = foodListText;
+    </code></pre>
+
+<h3 class="text-primary mt-5">Task 4</h3>
+
+    <pre><code class="language-html">
+      &lt;p id="FavFood_01"&gt;Favorite Food&lt;/p&gt;
+  &lt;p id="FavFood_02"&gt;Favorite Food&lt;/p&gt;
+  &lt;p id="FavFood_03"&gt;Favorite Food&lt;/p&gt;
+
+    </code></pre>
+
+  
+   <h3 class="text-primary mt-5">Task 4 & Task 5 - favourite recipe object</h3 >
+
+
+
+  <pre><code class="language-html">
+&lt;h1&gt;Hot Chocolate Recipe&lt;/h1&gt;
+    &lt;div id="recipe"&gt;&lt;/div&gt;
+    &lt;button id="cookButton"&gt;Let's Cook!&lt;/button&gt;
+
+  </code></pre>
+
+    <pre><code class="language-javascript">
+// Create an object to hold information about Hot Chocolate
+        const hotChocolateRecipe = {
+            name: "Hot Chocolate",
+            ingredients: [
+                "2 cups milk",
+                "2 tablespoons cocoa powder",
+                "2 tablespoons sugar",
+                "1/4 cup water",
+                "1/4 teaspoon vanilla extract",
+                "Whipped cream (optional)",
+                "Chocolate shavings (optional)"
+            ],
+            directions: [
+                "In a saucepan, mix cocoa powder and sugar with water over medium heat.",
+                "Stir until it becomes a smooth paste.",
+                "Add milk and continue to stir until hot, but do not boil.",
+                "Remove from heat and stir in vanilla extract.",
+                "Pour into mugs and top with whipped cream and chocolate shavings if desired."
+            ]
+        };
+
+        // Function to display the recipe
+        function displayRecipe() {
+            // Display the ingredients
+            let recipeHTML = "<h2>Ingredients:</h2><ul>";
+            for (let i = 0; i < hotChocolateRecipe.ingredients.length; i++) {
+                recipeHTML += `<li>${hotChocolateRecipe.ingredients[i]}</li>`;
+            }
+            recipeHTML += "</ul>";
+
+            // Display the directions
+            recipeHTML += "<h2>Directions:</h2><ol>";
+            for (let i = 0; i < hotChocolateRecipe.directions.length; i++) {
+                recipeHTML += `<li>${hotChocolateRecipe.directions[i]}</li>`;
+            }
+            recipeHTML += "</ol>";
+
+            // Display the recipe on the screen
+            document.getElementById("recipe").innerHTML = recipeHTML;
+        }
+
+        // Event listener for the "Let's Cook!" button
+        document.getElementById("cookButton").addEventListener("click", displayRecipe);
+    </code></pre>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+
+   
