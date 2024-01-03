@@ -1,0 +1,324 @@
+---
+layout: layouts/base.njk
+title: Home Page
+---
+
+<h2 class="text-primary mt-5 mb-4">Loops, Arrays and Objects - Practical lesson tasks</h2>
+
+
+   <h3 class="text-primary mt-2">P1 Shopping</h3>
+    <pre><code class="language-javascript">
+
+const shoppingCart = [
+  {
+    name: "Apples",
+    quantity: 3,
+    price: 1
+  },
+  {
+    name: "Bread",
+    quantity: 1,
+    price: 2
+  },
+  {
+    name: "Milk",
+    quantity: 2,
+    price: 3
+  }
+];
+
+
+const calculateTotalPrice = (cart) => {
+  let totalPrice = 0;
+
+  cart.forEach((item) => {
+    const itemTotalPrice = item.quantity * item.price;
+    totalPrice += itemTotalPrice;
+  });
+
+  return totalPrice;
+};
+
+const totalPrice = calculateTotalPrice(shoppingCart);
+
+console.log("Total price:", totalPrice); // Output: 15.49
+
+    </code></pre>
+
+
+
+
+       <h3 class="text-primary mt-2">P2 Shopping food discount</h3>
+    <pre><code class="language-javascript">
+
+const shoppingCart = [
+  {
+    name: "Apples",
+    type: "food",
+    quantity: 1,
+    price: 1
+  },
+  {
+    name: "Milk",
+    type: "food",
+    quantity: 1,
+    price: 1
+  },
+];
+
+
+const calculateTotalPrice = (cart) => {
+  let totalPrice = 0;
+
+  cart.forEach((item) => {
+
+    if(item.type==="food"){const itemTotalPrice = item.quantity *(item.price*.8) ;
+     totalPrice += itemTotalPrice;
+    } else {
+const itemTotalPrice = item.quantity *item.price
+totalPrice += itemTotalPrice;
+    }
+    
+    
+  });
+
+  return totalPrice;
+};
+
+const totalPrice = calculateTotalPrice(shoppingCart);
+
+console.log("Total price:", totalPrice); 
+
+    </code></pre>
+ 
+
+        <h3 class="text-primary mt-2">P3 General discount</h3>
+    <pre><code class="language-javascript">
+
+const shoppingCart = [
+  {
+    name: "Apples",
+    type: "food",
+    quantity: 1,
+    price: 1
+  },
+  {
+    name: "Milk",
+    type: "food",
+    quantity: 1,
+    price: 1
+  },
+];
+
+
+const calculateTotalPrice = (cart,discountAmount,type) => {
+  let totalPrice = 0;
+
+  cart.forEach((item) => {
+
+    const itemTotalPrice = item.quantity *item.price*(100-discountAmount)/100;
+     totalPrice += itemTotalPrice;
+    
+  });
+
+  return totalPrice;
+};
+
+const totalPrice = calculateTotalPrice(shoppingCart,20,"any");
+
+console.log("Total price:", totalPrice); 
+    </code></pre>
+
+
+        <h3 class="text-primary mt-2">P4 Shopping food price range</h3>
+    <pre><code class="language-javascript">
+
+const shoppingCart = [
+  {
+    name: "Apples",
+    type: "food",
+    quantity: 1,
+    price: 1
+  },
+  {
+    name: "Milk",
+    type: "food",
+    quantity: 1,
+    price: 1
+  },
+];
+
+
+const calculateTotalPrice = (cart,discountAmount,type) => {
+  let totalPrice = 0;
+
+  cart.forEach((item) => {
+
+    const itemTotalPrice = item.quantity *item.price*(100-discountAmount)/100;
+     totalPrice += itemTotalPrice;
+    
+  });
+
+  return totalPrice;
+};
+
+const totalPrice = calculateTotalPrice(shoppingCart,20,"any");
+
+console.log("Total price:", totalPrice); 
+    </code></pre>
+
+ 
+
+        <h3 class="text-primary mt-2">P5 Shopping food price range</h3>
+    <pre><code class="language-javascript">
+
+const shoppingCart = [
+ {
+  name: "Apples",
+  type: "food",
+  quantity: 3,
+  price: 6
+ },
+ {
+  name: "Bread",
+  type: "food",
+  quantity: 1,
+  price: 2
+ },
+ {
+  name: "Milk",
+  type: "food",
+  quantity: 2,
+  price: 3
+ }
+];
+
+
+function filterItemsByPrice(cart, lowPrice, highPrice, quantity) {
+ const arrItems = [];
+
+ // Loop through each item in the cart
+ for (const item of cart) {
+   // Check if the item's price is in range
+   if ((item.price >= lowPrice && item.price <= highPrice) || quantity===true) {
+     arrItems.push(item);
+   }
+ }
+
+ return arrItems;
+}
+
+
+const filteredItems = filterItemsByPrice(shoppingCart, 2, 5,false);
+console.log(filteredItems);
+    </code></pre>
+
+
+   <h3 class="text-primary mt-2">Additional Tasks</h3>
+    <pre><code class="language-javascript">
+
+  // Part 1
+// Mean code task, got a function to caculate the mean then runs it. 
+//
+
+function calculateMean(numbers) {
+  let sum = 0;
+  let count = 0;
+
+  // Iterate through the array using a for loop
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];  
+    count++;            
+  }
+
+  // Calculate the mean and return it
+  return sum / count;
+}
+
+let randomNumbers = [4, 6, 15, 2, 25, 3, 7];
+// let randomNumbers = [6,5];
+let average = calculateMean(randomNumbers);
+console.log("Mean " +average);  
+//*
+// Mode code task, got a function to caculate the mode then runs it. 
+//*
+function findMode(numbers) {
+  let countMap = {}; // Create a map to store counts of each number
+  let modeValue = null;
+  let maxCount = 0;
+
+  // Count occurrences of each number
+  for (let i = 0; i < numbers.length; i++) {
+    const num = numbers[i];
+    countMap[num] = (countMap[num] || 0) + 1; // Increment count or initialize to 1
+
+    if (countMap[num] > maxCount) {
+      modeValue = num;
+      maxCount = countMap[num];
+    }
+  }
+
+  // Display the mode
+  console.log("Mode:", modeValue);
+}
+
+randomNumbers = [4, 6, 15, 2,6,6, 25, 3, 7,15];
+findMode(randomNumbers);  
+
+//
+//Median <code>
+//
+function findMedian(numbers) {
+  // Sort the numbers in ascending order
+  const sortedNumbers = numbers.slice().sort((a, b) => a - b);
+
+  // Calculate the middle index based on the length
+  const middleIndex = Math.floor(sortedNumbers.length / 2);
+
+  // Determine the median based on whether the length is odd or even
+  const median = sortedNumbers.length % 2 === 0
+    ? (sortedNumbers[middleIndex - 1] + sortedNumbers[middleIndex]) / 2
+    : sortedNumbers[middleIndex];
+
+  // Display the median
+  console.log("Median:", median);
+}
+
+randomNumbers = [4, 6, 15, 2, 25, 3, 7];
+findMedian(randomNumbers);  
+
+
+//
+//Part 2 - Function to choose which code to run, mode, median or mean 
+//
+function calculateStatistic(numbers, type) {
+  switch (type) {
+    case "mode":
+      findMode(numbers);
+      break;
+    case "median":
+      findMedian(numbers);
+      break;
+    case "mean":
+      let average = calculateMean(numbers);
+      console.log("Mean:", average);  // Adjust output format for consistency
+      break;
+    default:
+      console.error("Invalid type:", type);
+  }
+}
+
+ randomNumbers = [4, 6, 15, 2, 25, 3, 7];
+calculateStatistic(randomNumbers, "mode");  // Output: Mode: 4
+calculateStatistic(randomNumbers, "median"); // Output: Median: 4
+calculateStatistic(randomNumbers, "mean");   // Output: Mean: 8.857142857142858
+
+
+
+
+
+
+
+    </code></pre>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>

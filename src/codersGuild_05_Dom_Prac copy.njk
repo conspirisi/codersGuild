@@ -1,0 +1,136 @@
+---
+layout: layouts/base.njk
+title: Home Page
+---
+
+<h2 class="text-primary mt-5">DOM Practical Task</h2>
+<a href="https://codepen.io/conspirisi/pen/poYjzdb?editors=1011" target="_blank">See on Codepen</a>
+
+ <h3 class="text-primary mt-5">Animal Filter - HTML code</h3>
+
+    <pre><code class="language-html">
+
+&lt;h1&gt;Animals&lt;/h1&gt;
+&lt;form id="filters"&gt;
+    &lt;fieldset&gt;
+        &lt;input type="radio" id="frog" name="animal" value="frog"&gt;
+        &lt;label for="bear"&gt;Frogs&lt;/label&gt;
+        &lt;input type="radio" id="manatee" name="animal" value="manatee"&gt;
+        &lt;label for="frog"&gt;Manatees&lt;/label&gt;
+        &lt;input type="radio" id="panda" name="animal" value="panda"&gt;
+        &lt;label for="duck"&gt;Pandas&lt;/label&gt;
+        &lt;input type="radio" id="squirrel" name="animal" value="squirrel"&gt;
+        &lt;label for="giraffe"&gt;Squirrels&lt;/label&gt;
+        &lt;input type="radio" id="all" name="animal" value="all" checked="true"&gt;
+        &lt;label for="all"&gt;Show All&lt;/label&gt;
+    &lt;/fieldset&gt;
+    &lt;input type="search" id="searchID" /&gt;
+    &lt;button&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;h2 id="frogs" data-animal="frog"&gt;Frogs&lt;/h2&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/70083/frog-macro-amphibian-green-70083.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Green Frog" data-animal="frog"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/76957/tree-frog-frog-red-eyed-amphibian-76957.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Green Blue Yellow and Orange Frog on Green Leaf" data-animal="frog"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/45863/frog-butterfly-pond-mirroring-45863.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Macro Photography of Green Frog" data-animal="frog"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/35669/hyla-meridionalis-the-frog-amphibians.jpg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Shallow Focus Photography of Green Frog" data-animal="frog"&gt;
+
+
+&lt;h2 id="manatee" data-animal="manatee"&gt;Manatee&lt;/h2&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/5254812/pexels-photo-5254812.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Manatee Floating in Water" data-animal="manatee"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/4766707/pexels-photo-4766707.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Manatee under Water" data-animal="manatee"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/8026836/pexels-photo-8026836.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="An Underwater Photography of a Manatee Submerged in the Sea" data-animal="manatee"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/12313571/pexels-photo-12313571.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Close Up Shot of a Manatee" data-animal="manatee"&gt;
+
+
+&lt;h2 id="pandas" data-animal="panda"&gt;Pandas&lt;/h2&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/7506265/pexels-photo-7506265.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Panda bear eating bamboo leaves in zoo" data-animal="panda"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/6939448/pexels-photo-6939448.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="A Panda Eating Bamboo in the Zoo" data-animal="panda"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/8162930/pexels-photo-8162930.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Panda Sitting on Top of a Wood" data-animal="panda"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/4741848/pexels-photo-4741848.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Cute Panda Lying on Tree Logs&nbsp;" data-animal="panda"&gt;
+
+
+&lt;h2 id="squirrels" data-animal="squirrel"&gt;Squirrels&lt;/h2&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Brown Squirrel" data-animal="squirrel"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/47359/squirrel-wildlife-nature-animal-47359.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Photo of Squirrel Holding Nut During Daytime" data-animal="squirrel"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/1571117/pexels-photo-1571117.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Brown Squirrel on Gray Tree Trunk" data-animal="squirrel"&gt;
+&lt;img loading="lazy" src="https://images.pexels.com/photos/1161556/pexels-photo-1161556.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Selective Focus Photography of Squirrel" data-animal="squirrel"&gt;
+    </code></pre>
+
+  
+   <h3 class="text-primary mt-2">Animal Filter - JS code</h3>
+    <pre><code class="language-javascript">
+
+  const radioButtons = document.querySelectorAll('input[name="animal"]');
+
+  // Add a click event listener to each radio button
+  radioButtons.forEach((radioButton) => {
+    radioButton.addEventListener("click", function() {
+      // Check which radio button was clicked
+      const selectedValue = this.value;
+      // console.log("Selected Animal: " + selectedValue);
+      clearAll()
+      showAnimals(selectedValue)
+      if(this.value==="all"){
+        showAll()
+      }
+      
+    });
+  });
+
+clearAll=()=>{
+ const targetNodeList = document.querySelectorAll('[data-animal]');
+    targetNodeList.forEach((node) => {
+    // const animalValue = element.getAttribute('data-animal');
+      node.classList.add('hidden');
+   })
+}
+
+showAll=()=>{
+   const targetNodeList = document.querySelectorAll('[data-animal]');
+    targetNodeList.forEach((node) => {
+    // const animalValue = element.getAttribute('data-animal');
+      node.classList.remove('hidden');
+   })
+}
+
+
+
+function showAnimals(selectedValue) {
+  let targetElement="[data-animal="+selectedValue+"]"
+  // const frogs = document.querySelectorAll('[data-animal="frog"]');
+  const targetNodeList = document.querySelectorAll(targetElement);
+  targetNodeList.forEach((node) => {
+    node.classList.remove('hidden');
+  });
+
+  
+   var images = document.querySelectorAll('img');
+     images.forEach(function(img) {
+        var altText = img.alt.toLowerCase();
+       
+            img.style.display = ''; // Show the image if alt text matches
+      
+    });
+  
+}
+
+document.getElementById('filters').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    var searchTerm = document.getElementById('searchID').value.toLowerCase();
+    var images = document.querySelectorAll('img');
+
+    images.forEach(function(img) {
+        var altText = img.alt.toLowerCase();
+        if (altText.includes(searchTerm)) {
+            img.style.display = ''; // Show the image if alt text matches
+        } else {
+            img.style.display = 'none'; // Hide the image if alt text doesn't match
+        }
+    });
+});
+
+
+    </code></pre>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>

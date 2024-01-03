@@ -55,15 +55,38 @@
   </div>
 </nav>
 </div></div>
-    
-<h1>About page as an .njk</h1>
+    <div class="my-empty-div mt-4 mb-5"></div>
 
-<div class="containerGrid">
-    <div class="myTemp"></div>
-    <div class="heroSection">This is the home page.</div>
-    <div class="myTemp"></div>
-</div>
+<form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
 
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+
+            // Get form values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            // Construct the URL with parameters
+           var url = "/result/index.html?name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email);
+window.location.href = url;
+
+
+
+            // Redirect to the new URL
+            window.location.href = url;
+        });
+    </script>
 
   </div>
 

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/bricks.css">
+
+  <style>
+
+
+</style>
+</head>
+<body>
+  <div id="myContainer">
+  <div>
+
+<div class="navContainer">
+ 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Coders Guild
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/codersGuild_01_introJS">Intro to JS Practicals - Tasks</a></li>
+            <li><a class="dropdown-item" href="/codersGuild_02_Loops_01">Loops, Arrays and Objects - Lesson 1 Tasks</a></li>
+            <li><a class="dropdown-item" href="/codersGuild_03_LAO_prac">Loops, Arrays and Objects - Practical lesson tasks</a></li>
+            <li><a class="dropdown-item" href="/codersGuild_04_Dom_Lesson_Tasks">The Dom Lesson Tasks</a></li>
+            <li><a class="dropdown-item" href="/codersGuild_05_Dom_Prac">The Dom Practical Tasks</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div></div>
+    <h2 class="text-primary mt-5">Dom Lesson Tasks</h2>
+ <h3 class="text-primary mt-5">Tasks 1 to 6 - HTML code</h3>
+
+    <pre><code class="language-html">
+
+&lt;div class="container"&gt;
+  &lt;h1&gt;My todo list&lt;/h1&gt;
+  
+  &lt;form id="todo"&gt;
+    &lt;label for="title"&gt;Title&lt;/label&gt;
+    &lt;input type="text" name="title" id="title" required&gt;
+    &lt;label for="priority"&gt;Priority&lt;/label&gt;
+    &lt;select name="priority" id="priority"&gt;
+      &lt;option value="low"&gt;Low&lt;/option&gt;
+      &lt;option value="medium" selected&gt;Medium&lt;/option&gt;
+      &lt;option value="high"&gt;High&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;button type="button" onclick="addTodoItem()"&gt;Add&lt;/button&gt;
+    &lt;button type="button" onclick="removeLastTodoItem()"&gt;Remove&lt;/button&gt;
+  &lt;/form&gt;
+
+  &lt;!-- This is an empty container for use by javascript. --&gt;
+  &lt;ul id="todo-pane"&gt;&lt;/ul&gt;
+  
+  &lt;footer&gt;
+    &lt;small&gt;
+      Flag images used with thanks from &lt;a href="https://www.iconfinder.com/iconsets/prettyoffice8"&gt;https://www.iconfinder.com/iconsets/prettyoffice8&lt;/a&gt;.
+    &lt;/small&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+
+    </code></pre>
+
+  
+   <h3 class="text-primary mt-2">Tasks 1 to 6 - JS code</h3>
+    <pre><code class="language-javascript">
+
+  const todoPane = document.getElementById('todo-pane');
+
+function createElement(title) {
+  // Create the text node with the variable 'title'.
+  const textNode = document.createTextNode(title);
+
+  // Create a new list item element to contain the text node.
+  const listItem = document.createElement('li');
+
+  // Add the text node to the list item element.
+  listItem.appendChild(textNode);
+
+  // Return the new element.
+  return listItem;
+}
+
+function addTodoItem() {
+  // Get the title from the input field
+  const title = document.getElementById('title').value;
+
+  // Create a new list item with the title
+  const newElement = createElement(title);
+
+  // Add the new element to the list
+  todoPane.appendChild(newElement);
+}
+
+function removeLastTodoItem() {
+  // Select the last list item
+  const lastItem = todoPane.lastElementChild;
+
+  // Remove it if it exists
+  if (lastItem) {
+    lastItem.remove();
+  }
+}
+
+// Example: Adding an item for demonstration
+addTodoItem('Sample Todo Item');
+
+
+    </code></pre>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+</body> 
+
+
+</html>

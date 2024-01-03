@@ -55,15 +55,87 @@
   </div>
 </nav>
 </div></div>
-    
-<h1>About page as an .njk</h1>
+    <h2 class="text-primary mt-5">Dom Lesson Tasks</h2>
+ <h3 class="text-primary mt-5">Tasks 1 to 6 - HTML code</h3>
 
-<div class="containerGrid">
-    <div class="myTemp"></div>
-    <div class="heroSection">This is the home page.</div>
-    <div class="myTemp"></div>
-</div>
+    <pre><code class="language-html">
 
+&lt;div class="container"&gt;
+  &lt;h1&gt;My todo list&lt;/h1&gt;
+  
+  &lt;form id="todo"&gt;
+    &lt;label for="title"&gt;Title&lt;/label&gt;
+    &lt;input type="text" name="title" id="title" required&gt;
+    &lt;label for="priority"&gt;Priority&lt;/label&gt;
+    &lt;select name="priority" id="priority"&gt;
+      &lt;option value="low"&gt;Low&lt;/option&gt;
+      &lt;option value="medium" selected&gt;Medium&lt;/option&gt;
+      &lt;option value="high"&gt;High&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;button type="button" onclick="addTodoItem()"&gt;Add&lt;/button&gt;
+    &lt;button type="button" onclick="removeLastTodoItem()"&gt;Remove&lt;/button&gt;
+  &lt;/form&gt;
+
+  &lt;!-- This is an empty container for use by javascript. --&gt;
+  &lt;ul id="todo-pane"&gt;&lt;/ul&gt;
+  
+  &lt;footer&gt;
+    &lt;small&gt;
+      Flag images used with thanks from &lt;a href="https://www.iconfinder.com/iconsets/prettyoffice8"&gt;https://www.iconfinder.com/iconsets/prettyoffice8&lt;/a&gt;.
+    &lt;/small&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+
+    </code></pre>
+
+  
+   <h3 class="text-primary mt-2">Tasks 1 to 6 - JS code</h3>
+    <pre><code class="language-javascript">
+
+  const todoPane = document.getElementById('todo-pane');
+
+function createElement(title) {
+  // Create the text node with the variable 'title'.
+  const textNode = document.createTextNode(title);
+
+  // Create a new list item element to contain the text node.
+  const listItem = document.createElement('li');
+
+  // Add the text node to the list item element.
+  listItem.appendChild(textNode);
+
+  // Return the new element.
+  return listItem;
+}
+
+function addTodoItem() {
+  // Get the title from the input field
+  const title = document.getElementById('title').value;
+
+  // Create a new list item with the title
+  const newElement = createElement(title);
+
+  // Add the new element to the list
+  todoPane.appendChild(newElement);
+}
+
+function removeLastTodoItem() {
+  // Select the last list item
+  const lastItem = todoPane.lastElementChild;
+
+  // Remove it if it exists
+  if (lastItem) {
+    lastItem.remove();
+  }
+}
+
+// Example: Adding an item for demonstration
+addTodoItem('Sample Todo Item');
+
+
+    </code></pre>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 
   </div>
 

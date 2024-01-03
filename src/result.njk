@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+title: Home Page
+---
+<div class="my-empty-div mt-4 mb-5"></div>
+<h1>Form Parameters:</h1>
+    <div id="parameters"></div>
+
+    <script>
+        // Parse the URL to extract parameters
+        var params = new URLSearchParams(window.location.search);
+        var name = params.get("name");
+        var email = params.get("email");
+
+        // Display the parameters on the page
+        var parametersDiv = document.getElementById("parameters");
+        parametersDiv.innerHTML = "Name: " + name + "<br>Email: " + email;
+    </script>
