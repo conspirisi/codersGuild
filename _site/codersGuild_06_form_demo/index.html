@@ -55,35 +55,55 @@
   </div>
 </nav>
 </div></div>
-    <div class="my-empty-div mt-4 mb-5"></div>
+      <div class="container">
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" required>
+                </div>
 
-<form id="myForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
+                <div class="form-group col-md-6">
+                    <label for="surname">Surname:</label>
+                    <input type="text" class="form-control" id="surname" name="surname" required>
+                </div>
+            </div>
 
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email"><br><br>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
 
-        <input type="submit" value="Submit">
-    </form>
+            <div class="form-group">
+                <label for="comment">Comment (up to 300 characters):</label>
+                <textarea class="form-control" id="comment" name="comment" rows="4" maxlength="300" required></textarea>
+            </div>
 
-    <div id="result"></div>
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+        </form>
+    </div>
 
     <script>
-        document.getElementById("myForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting traditionally
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
 
-            // Get form values
-            var name = document.getElementById("name").value;
+            // Get the form values
+            var firstname = document.getElementById("firstname").value;
+            var surname = document.getElementById("surname").value;
             var email = document.getElementById("email").value;
+            var comment = document.getElementById("comment").value;
 
-            // Construct the URL with parameters
-           var url = "/result/index.html?name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email);
-window.location.href = url;
+            // Construct the URL with query parameters
+            var url = "/result/index.html?" +
+                "firstname=" + encodeURIComponent(firstname) +
+                "&surname=" + encodeURIComponent(surname) +
+                "&email=" + encodeURIComponent(email) +
+                "&comment=" + encodeURIComponent(comment);
 
-
-
-            // Redirect to the new URL
+            // Redirect to the destination page with the query parameters
             window.location.href = url;
         });
     </script>

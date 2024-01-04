@@ -55,19 +55,38 @@
   </div>
 </nav>
 </div></div>
-    <div class="my-empty-div mt-4 mb-5"></div>
-<h1>Form Parameters:</h1>
-    <div id="parameters"></div>
+    <h2>Contact Form Submission Result</h2>
+
+    <div id="result">
+        <p><strong>First Name:</strong> <span id="firstname"></span></p>
+        <p><strong>Surname:</strong> <span id="surname"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+        <p><strong>Comment:</strong> <span id="comment"></span></p>
+    </div>
 
     <script>
-        // Parse the URL to extract parameters
-        var params = new URLSearchParams(window.location.search);
-        var name = params.get("name");
-        var email = params.get("email");
+        // Function to get the value of a URL parameter by its name
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
 
-        // Display the parameters on the page
-        var parametersDiv = document.getElementById("parameters");
-        parametersDiv.innerHTML = "Name: " + name + "<br>Email: " + email;
+        // Get the values from URL parameters
+        var firstname = getParameterByName("firstname");
+        var surname = getParameterByName("surname");
+        var email = getParameterByName("email");
+        var comment = getParameterByName("comment");
+
+        // Display the values on the page
+        document.getElementById("firstname").textContent = firstname;
+        document.getElementById("surname").textContent = surname;
+        document.getElementById("email").textContent = email;
+        document.getElementById("comment").textContent = comment;
     </script>
 
   </div>
